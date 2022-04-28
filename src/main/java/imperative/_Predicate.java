@@ -10,15 +10,19 @@ public class _Predicate {
         System.out.println(isPhoneNumberValid("09123456789"));
 
         System.out.println("With Predicate");
-        System.out.println(isPhoneNumberValidPredicate.test("07123456789"));
-        System.out.println(isPhoneNumberValidPredicate.test("09123456789"));
+        System.out.println(isPhoneNumberValidPredicate
+                .and(isPhoneNumberCorrectLengthPredicate)
+                .test("07123456789"));
+        System.out.println(isPhoneNumberValidPredicate
+                .and(isPhoneNumberCorrectLengthPredicate).
+                test("09123456789"));
     }
 
-    static boolean isPhoneNumberValid(String phoneNumber){
+    static boolean isPhoneNumberValid(String phoneNumber) {
         return phoneNumber.startsWith("07") && phoneNumber.length() == 11;
     }
 
-    static Predicate<String> isPhoneNumberValidPredicate = phoneNumber -> phoneNumber.startsWith("07") && phoneNumber.length() == 11;
-
+    static Predicate<String> isPhoneNumberValidPredicate = phoneNumber -> phoneNumber.startsWith("07");
+    static Predicate<String> isPhoneNumberCorrectLengthPredicate = phoneNumber -> phoneNumber.length() == 11;
 
 }
