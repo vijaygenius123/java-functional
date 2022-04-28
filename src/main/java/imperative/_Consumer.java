@@ -24,7 +24,6 @@ public class _Consumer {
     static class Customer {
         private final String name;
         private final String number;
-
         Customer(String name, String number) {
             this.name = name;
             this.number = number;
