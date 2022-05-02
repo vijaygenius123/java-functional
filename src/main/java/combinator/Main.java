@@ -2,6 +2,8 @@ package combinator;
 
 import java.time.LocalDate;
 
+import static combinator.CustomerRegistrationValidator.*;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -21,6 +23,9 @@ public class Main {
         CustomerValidatorService customerValidatorService = new CustomerValidatorService();
         System.out.println(customerValidatorService.isValidCustomer(customerValid));
         System.out.println(customerValidatorService.isValidCustomer(customerInvalid));
+
+        System.out.println(isEmailValid().and(isPhoneNumberValid()).and(isAnAdult()).apply(customerValid));
+        System.out.println(isEmailValid().and(isPhoneNumberValid()).and(isAnAdult()).apply(customerInvalid));
 
     }
 }

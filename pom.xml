@@ -13,4 +13,17 @@
         <maven.compiler.target>15</maven.compiler.target>
     </properties>
 
+    <distributionManagement>
+        <repository>
+            <id>central</id>
+            <name>a0ckyfzh2gf4z-artifactory-primary-0-releases</name>
+            <url>https://vijaygenius123.jfrog.io/artifactory/default-maven-virtual</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>a0ckyfzh2gf4z-artifactory-primary-0-snapshots</name>
+            <url>https://vijaygenius123.jfrog.io/artifactory/default-maven-virtual</url>
+        </snapshotRepository>
+    </distributionManagement>
+
 </project>
